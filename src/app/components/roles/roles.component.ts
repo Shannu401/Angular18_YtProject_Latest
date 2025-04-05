@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IRole } from '../../model/interface/role';
+import { APIResponseModel, IRole } from '../../model/interface/role';
 
 @Component({
   selector: 'app-roles',
@@ -33,6 +33,25 @@ export class RolesComponent implements OnInit{
 
 
 
+  // roleList: IRole[] = [];
+  // changeRoleId!: number;
+
+  // //constructor(private hc: HttpClient){}
+  // hc = inject(HttpClient);
+
+  // ngOnInit(): void {
+  //   this.getAllRoles();
+  // }
+
+  // getAllRoles(){
+  //     this.hc.get('https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles').subscribe((res:any) => {
+  //       this.roleList = res.data;
+  //     })
+  // }
+
+
+
+
   roleList: IRole[] = [];
   changeRoleId!: number;
 
@@ -44,7 +63,7 @@ export class RolesComponent implements OnInit{
   }
 
   getAllRoles(){
-      this.hc.get('https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles').subscribe((res:any) => {
+      this.hc.get<APIResponseModel>('https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles').subscribe((res:APIResponseModel) => {
         this.roleList = res.data;
       })
   }

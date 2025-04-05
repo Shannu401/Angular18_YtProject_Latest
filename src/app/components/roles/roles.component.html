@@ -46,7 +46,7 @@
 
 
 
-
+<!-- 
     <div class="row mt-4">
         <div class="col-4">
             <ul>
@@ -62,10 +62,29 @@
         <div class="col-4">
             <button class="btn btn-warning d-block mt-2" *ngFor="let item of roleList">{{item.role}}</button>
         </div>
+    </div> -->
+
+
+
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="fw-bold">
+                        <td>Sr.No</td>
+                        <td>Role Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of roleList; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.role}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-
-
 
 
     
