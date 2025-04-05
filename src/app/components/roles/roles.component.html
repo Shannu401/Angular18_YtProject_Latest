@@ -1,0 +1,74 @@
+<div class="container">
+    <!-- <div class="row mt-4">
+        <div class="col-3">
+            <p>{{firstName}}</p>
+        </div>
+        <div class="col-3">
+            <p>{{version}}</p>
+        </div>
+        <div class="col-3">
+            <p>{{currentDate}}</p>
+        </div>
+        <div class="col-3">
+            <p>{{selectedState}}</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-3">
+            <input type="text" [value]="firstName" class="form-control">
+        </div>
+        <div class="col-3">
+            <input type="text" [(ngModel)]="firstName" class="form-control">
+        </div>
+        <div class="col-3">
+            <input [type]="inputType" value="btn Text">
+        </div>
+        <div class="col-3">
+            <select [(ngModel)]="selectedState" class="form-select">
+                <option value="AP">Andhra Pradesh</option>
+                <option value="MH">Maharastra</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="Goa">Goa</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3">
+            <button class="btn btn-success" (click)="showAlertMessage()">Show Alert</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-success" (click)="showMessage('Welcome to the React')">Show React Alert</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-success" (click)="showMessage('Welcome to the Dot Net')">Show Dot Net Alert</button>
+        </div>
+    </div> -->
+
+
+
+
+    <div class="row mt-4">
+        <div class="col-4">
+            <ul>
+                <li *ngFor="let item of roleList">{{item.role}}</li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <select class="form-select" [(ngModel)]="changeRoleId">
+                <option *ngFor="let item of roleList" [value]="item.roleId">{{item.role}}</option>
+            </select>
+            <p class="mt-2">Role ID: {{changeRoleId}}</p>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-warning d-block mt-2" *ngFor="let item of roleList">{{item.role}}</button>
+        </div>
+    </div>
+
+
+
+
+
+    
+</div>
+
+
